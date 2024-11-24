@@ -1,0 +1,108 @@
+.container-header {
+    justify-items: center;
+    background-size: auto;
+    width: 100%;
+
+    img {
+        width: 100%;
+        min-height: 140px;
+    }
+
+    .container-navbar {
+        ul {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            li {
+                width: 150px;
+                text-align: center;
+                list-style-type: none;
+                margin: 1rem 1rem 0rem 0.5rem;
+                height: 30px;
+                text-transform: uppercase;
+                color: #ffffffb9;
+                border-bottom: 3px solid transparent;
+                padding-bottom: 0.2rem;            
+            }
+            .active {
+                border-color: white;
+            }
+        }
+    }
+
+    .nav-mobile {
+        display: none;
+        position: absolute;
+        top: 0.5rem;
+        right: 2rem;
+        font-size: 40px;
+        color: white;
+    }
+}
+
+.mobile {
+    display: none;
+    background-color: transparent;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            width: 150px;
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            color: white; 
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width:830px) {
+    .container-header {
+        .container-navbar {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+            width: auto;
+            background-position: center;
+            background-size: contain;
+
+            ul {
+                li {
+                    padding: 1rem 0;
+                }
+            }
+        }
+
+        .nav-mobile {
+            display: block;
+        }
+    }
+}
+
+@media (max-width:450px) {
+    .container-header {
+        overflow: hidden;
+        
+        img {
+            background-position: center;
+            overflow: hidden;
+            width: auto;
+        }
+    }
+
+    .mobile {
+        ul {
+            li {
+                padding: 1rem 0;
+            }
+        }
+    }
+}
