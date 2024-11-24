@@ -144,7 +144,7 @@ const App: React.FC = () => {
                         <section className='cart-mobile-open'>
                             <div className='layout-mobile'>
                                 <Cart />
-                                <button className='btn-close-mobile' onClick={() => setVisibleCart(prev => !prev)}>
+                                <button id='btn-close-mobile' onClick={() => setVisibleCart(prev => !prev)}>
                                     <FaXmark />
                                 </button>
                                 <button className='check-now'>Checkout now</button>

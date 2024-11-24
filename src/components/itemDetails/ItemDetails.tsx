@@ -62,14 +62,14 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({ item, currencySymbol, onClose
                     <img src={item.images[0].image} alt={item.name} className="item-image" /> // Exibe a imagem do item
                 )}
                 <section className='details-list'>
-                    <h2>{item.name}</h2> {/* Nome do item */}
-                    <p className='item-descript'>{item.description}</p> {/* Descrição do item */}
+                    <h2>{item.name}</h2>
+                    <p className='item-descript'>{item.description}</p>
                 </section>
                 {item.modifiers && (
                     <ul className='container-modifiers'>
                         {item.modifiers.map(modifier => (
                             <li key={modifier.id}>
-                                <strong>{modifier.name}</strong> {/* Nome do modificador */}
+                                <strong>{modifier.name}</strong>
                                 <ul>
                                     {modifier.items.map(option => (
                                         <li key={option.id}>
@@ -90,10 +90,10 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({ item, currencySymbol, onClose
                         ))}
                     </ul>
                 )}
-                <section className='quantity-controls'>
+                <section className='quantity-controls-details'>
                     <button onClick={handleDecrement} disabled={quantity <= 1}><FaMinus /></button> {/* Botão para diminuir a quantidade */}
                     <span>{quantity}</span> {/* Exibe a quantidade atual */}
-                    <button className='btn-mais' onClick={handleIncrement}><FaPlus /></button> {/* Botão para aumentar a quantidade */}
+                    <button id='btn-mais' onClick={handleIncrement}><FaPlus /></button> {/* Botão para aumentar a quantidade */}
                 </section>
                 <section className='btn-adicionar-item'>
                     <button onClick={handleAddToCart}>

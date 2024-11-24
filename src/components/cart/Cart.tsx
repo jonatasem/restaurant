@@ -27,10 +27,10 @@ const Cart: React.FC = () => {
                         {cartItems.map(item => (
                             <article className='cart-item' key={item.id}>
                                 <div>
-                                    <span>
+                                    <div className='container-cart-item'>
                                         <p className='name-item-cart'>{item.name}</p> {/* Nome do item */}
                                         {item.modifiers && item.modifiers.length > 0 && (
-                                            <ul>
+                                            <ul className='controls-modifiers'>
                                                 {item.modifiers.map(modifier => {
                                                     // Calcula o selectedPrice para o modificador
                                                     const selectedPrice = modifier.items
@@ -38,7 +38,7 @@ const Cart: React.FC = () => {
                                                         .reduce((acc, option) => acc + option.price, 0); // Soma os preços das opções selecionadas
 
                                                     return (
-                                                        <li key={modifier.id}>
+                                                        <li className='modifier-list' key={modifier.id}>
                                                             {modifier.selectedItems.length > 0 ? modifier.selectedItems.join(', ') : ''} {/* Exibe opções selecionadas */}
                                                             <span>(+R$ {selectedPrice.toFixed(2)})</span> {/* Exibe o selectedPrice */}
                                                         </li>
@@ -62,7 +62,7 @@ const Cart: React.FC = () => {
                                                 +
                                             </button>
                                         </div>
-                                    </span>
+                                    </div>
                                     <p className='price-item-cart'>R$ {item.price.toFixed(2)}</p> {/* Preço do item */}
                                 </div>
                             </article>
